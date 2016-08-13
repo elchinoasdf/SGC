@@ -39,14 +39,6 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
                     <li><a href="php/logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
@@ -66,13 +58,16 @@
 				<div  class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div id="Tabla1" class="x_title">
-                    <h2>Cargas Disponibles <small>Todas las cargas</small></h2>
+                    <!--
+					<h2>Cargas Disponibles <small>Todas las cargas</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
+					-->
+					<h2><a class="collapse-link">Cargas Disponibles <i class="fa fa-chevron-up" style="font-size: 10px"></i></a><small>Todas las cargas</small></h2>
                     <div class="clearfix"></div>
                   
 				  <div class="x_content">
@@ -110,13 +105,16 @@
 				<div  class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div id="Tabla1" class="x_title">
-                    <h2>Mis Cargas <small>Todas las cargas</small></h2>
+                    <!--
+					<h2>Mis Cargas <small>Todas las cargas</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
+					-->
+					<h2><a class="collapse-link">Mis Cargas <i class="fa fa-chevron-up" style="font-size: 10px"></i></a><small>Todas las cargas</small></h2>
                     <div class="clearfix"></div>
                   
 				  <div class="x_content">

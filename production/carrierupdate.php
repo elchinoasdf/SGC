@@ -46,14 +46,6 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
                     <li><a href="php/logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
@@ -133,9 +125,10 @@
                         <div class="col-md-6 col-sm-6 col-xs-12"  >
                           <select class="form-control" id="contractor" name="contractor" tabindex="-1" required>
                               <option></option>
-							  <option value="Contrato 1">Contrato 1</option>
+							  <?PHP include_once ("php/load_contractor_list.php"); ?>
+							  <!--option value="Contrato 1">Contrato 1</option>
                               <option value="Contrato 2">Contrato 2</option>
-							  <option value="Contrato 3">Contrato 3</option>
+							  <option value="Contrato 3">Contrato 3</option -->
                           </select>
                         </div>
                       </div>

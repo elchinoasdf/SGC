@@ -46,14 +46,6 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
                     <li><a href="php/logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
@@ -90,7 +82,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" action="add_carrier.php" method="post">
+                    <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" action="php/add_carrier.php" method="post">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">Nombre de Usuario <span class="required">*</span>
                         </label>
@@ -133,9 +125,10 @@
                         <div class="col-md-6 col-sm-6 col-xs-12"  >
                           <select class="form-control" id="contractor" name="contractor" tabindex="-1" required>
                               <option></option>
-							  <option value="contrato1">Contrato 1</option>
-                              <option value="contrato2">Contrato 2</option>
-							  <option value="contrato3">Contrato 3</option>
+							  <?PHP include ("php/load_contractor_list.php"); ?>
+							  <!-- option value="1">Contrato 1</option>
+                              // <option value="2">Contrato 2</option>
+							  // <option value="3">Contrato 3</option -->
                           </select>
                         </div>
                       </div>

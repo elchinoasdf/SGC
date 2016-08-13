@@ -21,6 +21,22 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.asdf.css" rel="stylesheet">
+	<link href="../build/css/custom.mine.css" rel="stylesheet">
+
+	<!-- Include Required Prerequisites -->
+	
+	<!--Bootstrap DateRangePicker -->
+      <link rel="stylesheet" type="text/css" media="all" href="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="http://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+      <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script> 
+	  
+	<!-- Bootstrap SelectPicker -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.css" />
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.js"></script>
+	
 
   </head>
   <body>
@@ -39,14 +55,6 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
                     <li><a href="php/logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
@@ -57,15 +65,58 @@
               <h3>GENERAL <small>Panel de Control General</small></h3>
               </div>
             </div>
-
+			<!-- BEGIN DIV DE REPORTE -->
+				<div class="row">
+					<div class="clearfix"></div>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2><a class="collapse-link">Generar Reporte de Carga <i class="fa fa-chevron-up" style="font-size: 10px"></i></a></h2>
+								<div class="clearfix"></div>
+								<div clasS="x_content collapse in">
+									<form action="view_report.php" method="post">
+										<div class="form-group">
+											<label class="control-label col-md-12 col-sm-12 col-xs-12" align="left">Fechas del reporte<span class="required">*</span></label>
+											<div class="col-md-6 col-sm-6 col-xs-12" name="report_dateRange" id="report_dateRange">
+												<div class="input-group">
+												<input type="text" name="report_dateRange" id="report_dateRange" class="form-control avoidreadonlystyle" readonly />
+												<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+												<input type="hidden" name="startDate" />
+												<input type="hidden" name="endDate" />
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-12 col-sm-12 col-xs-12" align="left">Transportista</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+											<div class="form-group">
+											  <select class="selectpicker form-control" style="color: #000" id="carrier_select" name="carrier_select">
+												  <option value='Todos'>Todos</option>
+												  <?PHP include_once ("php/load_carrier_list2.php");?>
+											  </select>
+											 </div> 
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-md-12 col-sm-12 col-xs-12">
+												<button type="submit" class="btn btn-md btn-success">Generar</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- END DIV DE REPORTE -->
             <div class="clearfix"></div>
-
 			<div class="row"> <!-- TABLA DE CARGAS -->
 				<div class="clearfix"></div>
 				<div  class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div id="Tabla1" class="x_title">
-                    <h2>Tabla de Cargas <small>Todas las cargas</small></h2>
+                    <!--
+					<h2>Tabla de Cargas <small>Todas las cargas</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -81,9 +132,10 @@
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
-                    <div class="clearfix"></div>
-                  
-				  <div class="x_content">
+					-->
+				  <h2><a class="collapse-link">Tabla de Cargas <i class="fa fa-chevron-up" style="font-size: 10px"></i></a><small>Todas las cargas</small></h2>
+                  <div class="clearfix"></div>                  
+				  <div class="x_content collapse in">
 
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
@@ -123,6 +175,7 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="x_panel">
 						<div id="Tabla1" class="x_title">
+							<!--
 							<h2>Contratos<small>Todos los contratisas</small></h2>
 							<ul class="nav navbar-right panel_toolbox">
 								<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
@@ -135,6 +188,8 @@
 								</li>
 								<li><a class="close-link"><i class="fa fa-close"></i></a></li>
 							</ul>
+							-->
+							<h2><a class="collapse-link">Contratos <i class="fa fa-chevron-up" style="font-size: 10px"></i></a><small>Todos los Contratistas</small></h2>
 							<div class="clearfix"></div>
 							<div class="x_content">
 								<div class="table-responsive">
@@ -167,7 +222,8 @@
               <div  class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div id="Tabla1" class="x_title">
-                    <h2>Tabla de Usuarios <small>Todos los contratos</small></h2>
+                    <!--
+					<h2>Tabla de Usuarios <small>Todos los contratos</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -183,8 +239,9 @@
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
-                    <div class="clearfix"></div>
-                  
+					-->
+                  <h2><a class="collapse-link">Tabla de Usuarios <i class="fa fa-chevron-up" style="font-size: 10px"></i></a><small>Todos los usuarios</small></h2>
+				  <div class="clearfix"></div>                  
 				  <div class="x_content">
 
                     <div class="table-responsive">
@@ -253,6 +310,27 @@
 			}
 		}
 	</script>
+	<!-- DATERANGEPICKER --> 
+	<script type="text/javascript">
+			$('input[name="report_dateRange"]').daterangepicker({
+				ignoreReadonly: true,
+				locale: {
+					format: 'DD/MM/YYYY'},
+			}, function(start, end, label) {
+				console.log("New date range selected: ' + start.format('DD/MM/YYYY') + ' to ' + end.format('DD/MM/YYYY') + ' (predefined range: ' + label + ')");
+				$('[name=startDate]').val(start.format('DD/MM/YYYY'));
+				$('[name=endDate]').val(end.format('DD/MM/YYYY'));	
+			});
+	</script>
+	<!-- SELECTPICKER -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			$('select').selectpicker();
+			$('selectpicker').selectpicker(); */
+		});
+	</script>	
+
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SGC | AM Ingeniera </title>
+    <title>SGC | AM Ingenieria </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,10 +18,23 @@
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.asdf.css" rel="stylesheet">
-
+	<link href="../build/css/custom.mine.css" rel="stylesheet">
+	
+	<!-- Include Required Prerequisites -->
+	
+	<!--Bootstrap DateRangePicker -->
+      <link rel="stylesheet" type="text/css" media="all" href="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="http://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+      <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script> 
+	  
+	<!-- Bootstrap SelectPicker -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.css" />
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.js"></script>	
   </head>
   <body>
     <div class="container body">
@@ -53,20 +66,60 @@
                 </ul>
             </nav>
           </div>
-		  <div class="x_panel col-md-12 col-sm-12 col-xs-12">
-              <!--
-			  <h3>GENERAL <small>Panel de Control General</small></h3>
-              -->
-
-			<ul class="x_content nav navbar-left navbar-nav panel_toolbox btn-lg col-xs-3">
-			  <li><a href="#" class="btn btn-default">GENERAL</a></li>
-			  <li><a href="#" class="btn btn-default">INFORME</a></li>
-			  <li><a href="#" class="btn btn-default">OTRO PA</a></li>
-			</ul>
-
-		  </div>
             </div>
+			<!--NUEVO DIV DE PRUEBA -->
+			<div class="clearfix"></div>
+			<div class="row">
+			<div class="x_panel">
+				<ul>
+					<li class="btn btn-default"><a class="collapse-link">BOTON_1</a></li>
+					<li class="btn btn-default" data-toggle="collapse" data-target="#panel_prueba">BOTON_2</li>
+					<li class="btn btn-default" data-toggle="collapse" data-target="#panel_prueba">BOTON_3</li>
+				</ul>
+				</br>
+				<div id="panel_prueba" class="x_content collapse">
+					<div class="x_title"></div>
+					<h2>Generar Reporte de Cargas Realizadas</h2>
+					<form id="form_report" data-parsley-validate="" class="form-horizontal form-label-left" action="php/report.php" method="POST">
 
+
+
+									<div class="form-group">
+										<label class="control-label col-md-4 col-sm-3 col-xs-12" align="left">Fechas del reporte <span class="required">*</span></label>
+										<div class="col-md-6 col-sm-6 col-xs-12" name="report_dateRange" id="report_dateRange">
+											<div class="input-group">
+											<input type="text" name="report_dateRange" id="report_dateRange" class="form-control avoidreadonlystyle" readonly />
+											<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+											</div>
+										</div>
+									</div>
+	
+									<div class="form-group"> <!-- AUTOMATIZAR EL LLENADO DE ESTE LISTADO -->
+										<label class="control-label col-md-4 col-sm-3 col-xs-12" align="left">Contrato </label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+										<div class="form-group">
+										  <select class="form-control selectpicker" id="carrier_select" name="carrier_select">
+											  <option value='Todos'>Todos</option>
+											  <option value='usuario2'>Transportista 1</option>
+											  <option value='usuario3'>Transportista 2</option>
+											  <option value='usuario4'>Transportista 3</option>
+										  </select>
+										 </div> 
+										</div>
+									  </div>
+					
+					<div class="clearfix"></div>
+					<div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <button type="submit" class="btn btn-success">Generar Reporte</button>
+                        </div>
+                      </div>
+					</form>
+				</div>
+			</div>
+			</div>
+			<!-- FIN DIV DE PRUEBA-->
             <div class="clearfix"></div>
 
 			<div class="row"> <!-- TABLA DE CARGAS -->
@@ -74,7 +127,8 @@
 				<div  class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div id="Tabla1" class="x_title">
-                    <h2>Tabla de Cargas <small>Todas las cargas</small></h2>
+                    <!--
+					<h2>Tabla de Cargas <small>Todas las cargas</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -90,11 +144,12 @@
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
-                    <div class="clearfix"></div>
-                  
-				  <div class="x_content">
+					-->
+                  <h2><a class="collapse-link">Tabla de Cargas <i class="fa fa-chevron-up" style="font-size: 10px"></i></a><small>Todas las cargas</small></h2>
+				  <div class="clearfix"></div>
+				  <div class="x_content collapse in">
 
-                    <div class="table-responsive"  stlye="width: 120%">
+                    <div class="table-responsive" stlye="width: 120%">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
@@ -132,6 +187,7 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="x_panel">
 						<div id="Tabla1" class="x_title">
+							<!--
 							<h2>Contratos<small>Todos los contratisas</small></h2>
 							<ul class="nav navbar-right panel_toolbox">
 								<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
@@ -144,8 +200,10 @@
 								</li>
 								<li><a class="close-link"><i class="fa fa-close"></i></a></li>
 							</ul>
+							-->
+							<h2><a class="collapse-link">Contratos <i class="fa fa-chevron-up" style="font-size: 10px"></i></a><small>Todos los contratistas</small></h2>
 							<div class="clearfix"></div>
-							<div class="x_content">
+							<div class="x_content collapse in">
 								<div class="table-responsive">
 									<table class="table table-striped jambo_table bulk_action">
 										<thead>
@@ -176,7 +234,8 @@
               <div  class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div id="Tabla1" class="x_title">
-                    <h2>Tabla de Usuarios <small>Todos los contratos</small></h2>
+                    <!--
+					<h2>Tabla de Usuarios <small>Todos los contratos</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -192,8 +251,9 @@
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
-                    <div class="clearfix"></div>
-                  
+				  -->
+				  <h2><a class="collapse-link">Tabla de Usuarios <i class="fa fa-chevron-up" style="font-size: 10px"></i></a><small>Todos los usuarios</small></h2>
+                  <div class="clearfix"></div>
 				  <div class="x_content">
 
                     <div class="table-responsive">
@@ -262,6 +322,18 @@
 			}
 		}
 	</script>
+	<!-- DATERANGEPICKER --> 
+	
+	<script type="text/javascript">
+			$('input[name="report_dateRange"]').daterangepicker({
+				ignoreReadonly: true,
+				locale: {
+					format: 'DD/MM/YYYY'},
+			});
+	</script>
+	
+	<!-- SELECTPICKER -->
+
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
